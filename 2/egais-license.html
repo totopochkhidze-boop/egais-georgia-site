@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EGAIS License — Egais</title>
+<link rel="stylesheet" href="/assets/styles.css">
+</head><body>
+<header class="container nav sticky">
+  <img src="/assets/logo.jpg" style="height:42px"/>
+  <a href="/about.html" id="navAbout">About Us</a>
+  <a href="/egais-license.html" id="navEgais">EGAIS License</a>
+  <div class="menu">
+    <a href="#" id="navConsumables">Consumables</a>
+    <div class="submenu" style="position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:12px;display:none;min-width:240px;box-shadow:0 12px 24px rgba(0,0,0,.08);z-index:20">
+      <a href="/consumables-labels.html" id="navLabels" style="display:block;padding:10px 12px">Thermal Transfer Labels</a>
+      <a href="/consumables-ribbons.html" id="navRibbons" style="display:block;padding:10px 12px">Wax Ribbons</a>
+    </div>
+  </div>
+  <a href="/marking-equipment.html" id="navMarking">Marking Equipment</a>
+  <div class="spacer"></div>
+  <a href="/app/login.html" id="navLogin">Log in</a>
+  <div class="lang-switch"><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="ka">KA</button></div>
+</header>
+<div class="brandbar"></div>
+<section class="page-hero"><div class="container"><h1 id="pageTitle">EGAIS License</h1></div></section>
+<main class="container page">
+  <div id="content" class="lead"></div>
+</main>
+<footer class="container"><p id="footerText">© Georgian Technology Company LTD — Egais Georgia</p></footer>
+<script>
+const STR={en:{pageTitle:"EGAIS License"}, ka:{pageTitle:"ეგაისის ლიცენზია"}};
+
+const STRINGS = {
+  en: {
+    navAbout:"About Us", navEgais:"EGAIS License", navConsumables:"Consumables",
+    navLabels:"Thermal Transfer Labels", navRibbons:"Wax Ribbons",
+    navMarking:"Marking Equipment", navLogin:"Log in",
+    heroTitle:"Industrial Marking & Labeling Solutions",
+    heroSub:"Printer‑applicators, automatic labeling, and integrated verification for compliant, high‑speed operations.",
+    ctaProducts:"Explore Products", ctaContact:"Contact Us",
+    footerText:"© Georgian Technology Company LTD — Egais Georgia"
+  },
+  ka: {
+    navAbout:"ჩვენ შესახებ", navEgais:"ეგაისის ლიცენზია", navConsumables:"სახარჯი მასალა",
+    navLabels:"თერმოტრანსფერული ეტიკეტები", navRibbons:"ვაქსის რიბონი",
+    navMarking:"მარკირების აღჭურვილობა", navLogin:"შესვლა",
+    heroTitle:"ინდუსტრიული მარკირებისა და ეტიკეტირების გადაწყვეტილებები",
+    heroSub:"პრინტერ‑აპლიკატორები, ავტომატური ეტიკეტირება და ვერიფიკაცია შესაბამისობისა და მაღალი სიჩქარისთვის.",
+    ctaProducts:"პროდუქციის ნახვა", ctaContact:"დაგვიკავშირდით",
+    footerText:"© Georgian Technology Company LTD — Egais Georgia"
+  }
+};
+function getLang(){
+  const url=new URL(window.location.href); const q=url.searchParams.get('lang');
+  if(q && (q==='en'||q==='ka')){ localStorage.setItem('lang',q); return q; }
+  return localStorage.getItem('lang') || ((navigator.language||'en').toLowerCase().startsWith('ka')?'ka':'en');
+}
+function applyLang(){
+  const L=getLang(), s=STRINGS[L];
+  ['navAbout','navEgais','navConsumables','navLabels','navRibbons','navMarking','navLogin','footerText'].forEach(id=>{
+    const el=document.getElementById(id); if(el&&s[id]) el.textContent=s[id];
+  });
+  document.getElementById('heroTitle').textContent=s.heroTitle;
+  document.getElementById('heroSub').textContent=s.heroSub;
+  document.getElementById('ctaProducts').textContent=s.ctaProducts;
+  document.getElementById('ctaContact').textContent=s.ctaContact;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===L));
+  document.querySelectorAll('a[href$=".html"]').forEach(a=>{ const u=new URL(a.getAttribute('href'), location.origin); u.searchParams.set('lang', L); a.href=u.pathname+u.search; });
+}
+function attachLang(){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click', ()=>{
+    const L=b.dataset.lang; localStorage.setItem('lang',L);
+    const u=new URL(location.href); u.searchParams.set('lang',L); location.href=u.toString();
+  }));
+}
+applyLang(); attachLang();
+document.querySelector('.menu').addEventListener('mouseenter',()=>{document.querySelector('.menu .submenu').style.display='block';});
+document.querySelector('.menu').addEventListener('mouseleave',()=>{document.querySelector('.menu .submenu').style.display='none';});
+
+(function(){ const L=getLang(); document.getElementById('pageTitle').textContent = STR[L].pageTitle; })();
+</script>
+</body></html>
