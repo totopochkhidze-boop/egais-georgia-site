@@ -1,8 +1,104 @@
 <!doctype html>
-<html><head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Content Manager</title>
-</head>
-<body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-</body></html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Content Manager</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      // Inline config so it DOES NOT fetch /admin/config.yml
+      window.CMS_MANUAL_INIT = true;
+      CMS.init({
+        config: {
+          backend: { name: "git-gateway", branch: "main" },
+          media_folder: "assets/uploads",
+          public_folder: "/assets/uploads",
+          collections: [
+            {
+              name: "pages",
+              label: "Pages",
+              files: [
+                {
+                  label: "About Us",
+                  name: "about",
+                  file: "content/about.json",
+                  fields: [
+                    { label: "Body (EN)", name: "body_en", widget: "markdown" },
+                    { label: "Body (KA)", name: "body_ka", widget: "markdown" }
+                  ]
+                },
+                {
+                  label: "EGAIS License",
+                  name: "egais",
+                  file: "content/egais.json",
+                  fields: [
+                    { label: "Body (EN)", name: "body_en", widget: "markdown" },
+                    { label: "Body (KA)", name: "body_ka", widget: "markdown" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "labels",
+              label: "Consumables — Labels",
+              file: "content/consumables_labels.json",
+              fields: [
+                {
+                  label: "Sizes",
+                  name: "sizes",
+                  widget: "list",
+                  fields: [
+                    { label: "Dimension", name: "dimension" },
+                    { label: "Note (EN)", name: "note_en", required: false },
+                    { label: "Note (KA)", name: "note_ka", required: false },
+                    { label: "Features", name: "features", widget: "list", required: false }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "ribbons",
+              label: "Consumables — Wax Ribbons",
+              file: "content/consumables_ribbons.json",
+              fields: [
+                {
+                  label: "Sizes",
+                  name: "sizes",
+                  widget: "list",
+                  fields: [
+                    { label: "Dimension", name: "dimension" },
+                    { label: "Note (EN)", name: "note_en", required: false },
+                    { label: "Note (KA)", name: "note_ka", required: false },
+                    { label: "Features", name: "features", widget: "list", required: false }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "marking",
+              label: "Marking Equipment",
+              file: "content/marking.json",
+              fields: [
+                {
+                  label: "Items",
+                  name: "items",
+                  widget: "list",
+                  fields: [
+                    { label: "Title (EN)", name: "title_en" },
+                    { label: "Title (KA)", name: "title_ka" },
+                    { label: "Description (EN)", name: "description_en", widget: "text", required: false },
+                    { label: "Description (KA)", name: "description_ka", widget: "text", required: false },
+                    { label: "Images", name: "images", widget: "list", field: { label: "Image", name: "image", widget: "image" } },
+                    { label: "Link", name: "link", required: false }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>
