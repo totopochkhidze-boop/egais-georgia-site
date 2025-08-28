@@ -1,0 +1,96 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "about"
+        label: "About Us"
+        file: "content/about.json"
+        format: "json"
+        fields:
+          - {label: "Body (EN)", name: "body_en", widget: "markdown"}
+          - {label: "Body (KA)", name: "body_ka", widget: "markdown"}
+      - name: "egais"
+        label: "EGAIS — App"
+        file: "content/egais.json"
+        format: "json"
+        fields:
+          - {label: "Body (EN)", name: "body_en", widget: "markdown"}
+          - {label: "Body (KA)", name: "body_ka", widget: "markdown"}
+
+  - name: "consumables"
+    label: "Consumables (სახარჯი მასალა)"
+    files:
+      - name: "labels"
+        label: "Thermal Transfer Labels"
+        file: "content/consumables_labels.json"
+        format: "json"
+        fields:
+          - label: "Sizes"
+            name: "sizes"
+            widget: "list"
+            fields:
+              - {label: "Dimension", name: "dimension", widget: "string"}
+              - {label: "Features", name: "features", widget: "list", required: false}
+              - {label: "Note (EN)", name: "note_en", widget: "string", required: false}
+              - {label: "Note (KA)", name: "note_ka", widget: "string", required: false}
+      - name: "ribbons"
+        label: "Wax Ribbons"
+        file: "content/consumables_ribbons.json"
+        format: "json"
+        fields:
+          - label: "Sizes"
+            name: "sizes"
+            widget: "list"
+            fields:
+              - {label: "Dimension", name: "dimension", widget: "string"}
+              - {label: "Features", name: "features", widget: "list", required: false}
+              - {label: "Note (EN)", name: "note_en", widget: "string", required: false}
+              - {label: "Note (KA)", name: "note_ka", widget: "string", required: false}
+
+  - name: "equipment"
+    label: "Equipment"
+    files:
+      - name: "equipment_items"
+        label: "Items (Printers, Scanners, etc.)"
+        file: "content/equipment.json"
+        format: "json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title_en}} / {{fields.title_ka}}"
+            fields:
+              - {label: "Category", name: "category", widget: "select", options: ["Printers","Scanners","Other"]}
+              - {label: "Title (EN)", name: "title_en", widget: "string"}
+              - {label: "Title (KA)", name: "title_ka", widget: "string"}
+              - {label: "Description (EN)", name: "description_en", widget: "text"}
+              - {label: "Description (KA)", name: "description_ka", widget: "text"}
+              - {label: "Images", name: "images", widget: "list", field: {label: Image, name: image, widget: image}}
+              - {label: "Link", name: "link", widget: "string", required: false}
+
+  - name: "marking"
+    label: "Marking Equipment"
+    files:
+      - name: "marking_items"
+        label: "Items"
+        file: "content/marking.json"
+        format: "json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title_en}} / {{fields.title_ka}}"
+            fields:
+              - {label: "Title (EN)", name: "title_en", widget: "string"}
+              - {label: "Title (KA)", name: "title_ka", widget: "string"}
+              - {label: "Description (EN)", name: "description_en", widget: "text"}
+              - {label: "Description (KA)", name: "description_ka", widget: "text"}
+              - {label: "Images", name: "images", widget: "list", field: {label: Image, name: image, widget: image}}
+              - {label: "Link", name: "link", widget: "string", required: false}

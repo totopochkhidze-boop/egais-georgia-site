@@ -1,0 +1,75 @@
+:root{
+  --brand-blue:#2F4BA0;
+  --brand-gold:#F2A900;
+  --text:#0F172A;
+  --muted:#475569;
+  --bg:#F1F5F9;
+  --card:#FFFFFF;
+  --border:#E5E7EB;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
+header,footer{padding:28px 0;background:#fff;border-bottom:1px solid var(--border)}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+h1{font-size:32px;line-height:1.1;margin:0 0 6px;color:var(--brand-blue);font-weight:800}
+.lead{color:var(--muted);margin:0}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:20px;
+  margin:28px 0 40px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(0,0,0,.06);
+}
+.card img{
+  width:100%;height:220px;object-fit:cover;background:#EDF2F7
+}
+.card h2{
+  font-size:18px;font-weight:800;margin:12px 14px 4px;color:#111
+}
+.card p{
+  margin:6px 14px;color:#334155;line-height:1.5
+}
+.card .ka{color:#111;margin-top:2px}
+.card .src{
+  margin:4px 14px 0;color:#6b7280;font-size:12px
+}
+.btn{
+  display:inline-block;align-self:flex-start;margin:14px;
+  border-radius:12px;padding:10px 14px;
+  background:var(--brand-blue);color:#fff;text-decoration:none;font-weight:700
+}
+.btn:hover{background:#233A80}
+.badge{
+  display:inline-block;margin:10px 14px 0;padding:4px 10px;
+  font-size:12px;font-weight:700;color:#111;background:rgba(242,169,0,.18);
+  border:1px solid rgba(242,169,0,.5);border-radius:999px
+}
+.brandbar{
+  height:4px;background:linear-gradient(90deg,var(--brand-blue) 0%, var(--brand-gold) 100%);
+  margin:-28px 0 24px;
+}
+
+/* language switcher */
+.lang-switch{margin-left:auto;display:flex;gap:8px}
+.lang-btn{
+  appearance:none;border:1px solid var(--border);background:#fff;color:#111;
+  padding:8px 10px;border-radius:10px;cursor:pointer;font-weight:700
+}
+.lang-btn.active{border-color:var(--brand-blue);color:#fff;background:var(--brand-blue)}
+@media (max-width:640px){ .lang-switch{position:fixed;top:8px;right:12px} }

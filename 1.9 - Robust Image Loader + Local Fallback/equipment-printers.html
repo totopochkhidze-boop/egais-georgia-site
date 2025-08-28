@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Egais Georgia</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .nav{display:flex;align-items:center;gap:16px;padding:12px 0;background:#fff}
+    .nav a{color:var(--text);text-decoration:none;font-weight:700}
+    .spacer{flex:1 1 auto}
+    .menu{position:relative}
+    .submenu{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:12px;display:none;min-width:220px;box-shadow:0 12px 24px rgba(0,0,0,.08)}
+    .submenu a{display:block;padding:10px 12px}
+    .menu:hover .submenu{display:block}
+    .page{padding:24px 0}
+    .page h1{font-size:32px;color:var(--brand-blue);font-weight:800;margin:8px 0 12px}
+    .prose{max-width:900px;color:#334155;line-height:1.6}
+    .list{list-style:disc;padding-left:22px}
+    .pill{display:inline-block;background:rgba(242,169,0,.18);border:1px solid rgba(242,169,0,.5);border-radius:999px;padding:4px 10px;margin:6px 6px 6px 0;font-weight:700;font-size:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:16px 0}
+  </style>
+</head>
+<body>
+  <header class="container nav">
+    <img src="/assets/logo.png" alt="Egais Georgia" style="height:42px;"/>
+    <a href="/index.html" id="navHome">Home</a>
+    <div class="menu">
+      <a href="#" id="navConsumables">Consumables</a>
+      <div class="submenu">
+        <a href="/consumables-labels.html" id="navLabels">Thermal Transfer Labels</a>
+        <a href="/consumables-ribbons.html" id="navRibbons">Wax Ribbons</a>
+      </div>
+    </div>
+    <div class="menu">
+      <a href="#" id="navEquipment">Equipment</a>
+      <div class="submenu">
+        <a href="/equipment-printers.html" id="navPrinters">Printers</a>
+        <a href="/equipment-scanners.html" id="navScanners">Scanners</a>
+      </div>
+    </div>
+    <a href="/marking-equipment.html" id="navMarking">Marking Equipment</a>
+    <a href="/about.html" id="navAbout">About Us</a>
+    <a href="/egais-app.html" id="navEgais">EGAIS — App</a>
+    <div class="spacer"></div>
+    <a href="/app/login.html" id="navLogin">Log in</a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ka">KA</button>
+    </div>
+  </header>
+  <div class="brandbar"></div>
+  <main class="container page">
+
+  <h1 id="title"></h1>
+  <div id="grid" class="grid"></div>
+<script>
+const PAGE_CAT = "Printers";
+const STRINGS = {
+  en:{ printers:"Printers", scanners:"Scanners", cta:"Details" },
+  ka:{ printers:"პრინტერები", scanners:"სკანერები", cta:"ვრცლად" }
+};
+async function load(){
+  const L = getLang();
+  const titleKey = PAGE_CAT==='Printers'?'printers':'scanners';
+  document.getElementById('title').textContent = STRINGS[L][titleKey];
+  const res = await fetch('/content/equipment.json',{cache:'no-store'});
+  const data = await res.json();
+  const grid=document.getElementById('grid'); grid.innerHTML='';
+  (data.items||[]).filter(x=>x.category===PAGE_CAT).forEach(p=>{
+    const card=document.createElement('div'); card.className='card';
+    const img=document.createElement('img'); img.src=(p.images&&p.images[0])||'/assets/placeholder.jpg'; img.alt=(L==='en'?p.title_en:p.title_ka); card.appendChild(img);
+    const h2=document.createElement('h2'); h2.textContent=(L==='en'?p.title_en:p.title_ka); card.appendChild(h2);
+    const d=document.createElement('p'); d.textContent=(L==='en'?p.description_en:p.description_ka)||''; card.appendChild(d);
+    const a=document.createElement('a'); a.className='btn'; a.textContent=STRINGS[L].cta; a.href=p.link||'#'; card.appendChild(a);
+    grid.appendChild(card);
+  });
+}
+load();
+</script>
+
+  </main>
+  <footer class="container">
+    <p id="footerText">&copy; Georgian Technology Company LTD — Egais Georgia</p>
+  </footer>
+<script>
+const STRINGS_COMMON = {
+  en: {
+    navHome:"Home", navConsumables:"Consumables", navLabels:"Thermal Transfer Labels", navRibbons:"Wax Ribbons",
+    navEquipment:"Equipment", navPrinters:"Printers", navScanners:"Scanners",
+    navMarking:"Marking Equipment", navAbout:"About Us", navEgais:"EGAIS — App", navLogin:"Log in",
+    footerText:"© Georgian Technology Company LTD — Egais Georgia"
+  },
+  ka: {
+    navHome:"მთავარი", navConsumables:"სახარჯი მასალა", navLabels:"თერმოტრანსფერული ეტიკეტები", navRibbons:"ვაქსის რიბონი",
+    navEquipment:"აღჭურვილობა", navPrinters:"პრინტერები", navScanners:"სკანერები",
+    navMarking:"მარკირების აღჭურვილობა", navAbout:"ჩვენ შესახებ", navEgais:"EGAIS — აპი", navLogin:"შესვლა",
+    footerText:"© Georgian Technology Company LTD — Egais Georgia"
+  }
+};
+function getLang(){
+  const url = new URL(window.location.href);
+  const q = url.searchParams.get('lang');
+  if(q && (q==='en'||q==='ka')){ localStorage.setItem('lang',q); return q; }
+  return localStorage.getItem('lang') || ((navigator.language||'en').toLowerCase().startsWith('ka')?'ka':'en');
+}
+function applyCommon(){
+  const L = getLang();
+  const s = STRINGS_COMMON[L];
+  const ids=["navHome","navConsumables","navLabels","navRibbons","navEquipment","navPrinters","navScanners","navMarking","navAbout","navEgais","navLogin","footerText"];
+  ids.forEach(id=>{ const el=document.getElementById(id); if(el && s[id]) el.textContent=s[id]; });
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===L));
+  // add lang to menu links
+  document.querySelectorAll('a[href$=".html"]').forEach(a=>{
+    const u = new URL(a.getAttribute('href'), window.location.origin);
+    u.searchParams.set('lang', L);
+    a.setAttribute('href', u.pathname + u.search);
+  });
+}
+function attachLang(){
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      localStorage.setItem('lang', b.dataset.lang);
+      const u = new URL(window.location.href); u.searchParams.set('lang', b.dataset.lang); window.location.href = u.toString();
+    });
+  });
+}
+applyCommon(); attachLang();
+</script>
+</body>
+</html>

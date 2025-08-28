@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "title_en": "Printer‑Applicators (Label Print & Apply)",
+      "title_ka": "პრინტერ‑აპლიკატორები (ბეჭდვა და დაკვრა)",
+      "category": "Marking Equipment",
+      "warranty": "2 years",
+      "description_en": "Industrial systems that print a label (barcode, QR, variable data) and apply it in one pass. Used for compliance marking and high‑speed packaging lines.",
+      "description_ka": "ინდუსტრიული სისტემები, რომლებიც ერთ ეტაპზე ბეჭდავენ ეტიკეტს (შტრიხკოდი, QR, ცვალებადი მონაცემი) და აკრავენ. გამოიყენება შესაბამისობის მარკირებისა და მაღალი სიჩქარის ხაზებისთვის.",
+      "images": [
+        "/assets/placeholder.jpg"
+      ],
+      "tags": [
+        "print-apply",
+        "compliance",
+        "packaging"
+      ],
+      "source_url": "https://print-apply.ru/",
+      "cta_link": "mailto:info@egais-georgia.com?subject=Printer-Applicators"
+    },
+    {
+      "title_en": "Automatic Label Applicator A‑150 (Pneumatic Transfer)",
+      "title_ka": "ავტომატური ეტიკეტირების აპლიკატორი A‑150 (პნევმო გადატანა)",
+      "category": "Marking Equipment",
+      "warranty": "2 years",
+      "description_en": "Automatic applicator with pneumatic transfer for top or side application. Integrates into existing conveyors and packaging lines.",
+      "description_ka": "ავტომატური აპლიკატორი პნევმატური გადატანით ზედა ან გვერდითი დაკვრისთვის. მარტივად ინტეგრირდება არსებულ კონვეიერებსა და შეფუთვის ხაზებში.",
+      "images": [
+        "/assets/placeholder.jpg"
+      ],
+      "tags": [
+        "applicator",
+        "A-150",
+        "top/side"
+      ],
+      "source_url": "https://print-apply.ru/product/applicators/applikator-etiketok-a-150-pnevmo/",
+      "cta_link": "mailto:info@egais-georgia.com?subject=Applicator%20A-150"
+    },
+    {
+      "title_en": "Automatic Label Application (High Throughput)",
+      "title_ka": "ავტომატური ეტიკეტირების სისტემა (მაღალი წარმადობა)",
+      "category": "Marking Equipment",
+      "warranty": "2 years",
+      "description_en": "High‑speed applicators capable of up to ~20,000 labels per hour and quick mounting on existing lines.",
+      "description_ka": "მაღალი სიჩქარის აპლიკატორები, რომლებიც საათში დაახლოებით 20,000 ეტიკეტამდე გადასცემენ და სწრაფად მონტაჟდება არსებულ ხაზებზე.",
+      "images": [
+        "/assets/placeholder.jpg"
+      ],
+      "tags": [
+        "high-speed",
+        "integration"
+      ],
+      "source_url": "https://print-apply.ru/news/avtomaticheskoe-nanesenie-etiketki/",
+      "cta_link": "mailto:info@egais-georgia.com?subject=High-Throughput%20Applicator"
+    },
+    {
+      "title_en": "Integrated Marking Line (Print‑&‑Apply + Barcode Reader)",
+      "title_ka": "ინტეგრირებული მარკირების ხაზი (ბეჭდვა‑დაკვრა + სკანერი)",
+      "category": "Marking Equipment",
+      "warranty": "2 years",
+      "description_en": "Combined line with printer‑applicator and industrial barcode reader to ensure full traceability and verification of unique codes.",
+      "description_ka": "გაერთიანებული ხაზი პრინტერ‑აპლიკატორითა და ინდუსტრიული შტრიხკოდის სკანერით — უზრუნველყოფს უნიკალური კოდების სრულ კვალვადობასა და ვერიფიკაციას.",
+      "images": [
+        "/assets/placeholder.jpg"
+      ],
+      "tags": [
+        "integrated-line",
+        "verification"
+      ],
+      "source_url": "https://print-apply.ru/news/line-barcode/",
+      "cta_link": "mailto:info@egais-georgia.com?subject=Integrated%20Marking%20Line"
+    },
+    {
+      "title_en": "Equipment for \"Chestny Znak\" Marking",
+      "title_ka": "აღჭურვილობა \"ჩესტნი ზნაკ\" მარკირებისთვის",
+      "category": "Marking Equipment",
+      "warranty": "2 years",
+      "description_en": "Solutions tailored for the Russian national digital marking system (Chestny Znak): printing and applying unique codes on regulated products.",
+      "description_ka": "გადაწყვეტილებები რუსეთის ეროვნული ციფრული მარკირების სისტემისთვის (Chestny Znak): უნიკალური კოდების ბეჭდვა და დაკვრა რეგულირებულ პროდუქტებზე.",
+      "images": [
+        "/assets/placeholder.jpg"
+      ],
+      "tags": [
+        "chestny-znak",
+        "compliance"
+      ],
+      "source_url": "https://print-apply.ru/product/chestnyy-znak/",
+      "cta_link": "mailto:info@egais-georgia.com?subject=Chestny%20Znak%20Equipment"
+    },
+    {
+      "title_en": "Checkweigher with Label Printing",
+      "title_ka": "ჩეკვეიერი ეტიკეტის ბეჭდვით",
+      "category": "Marking Equipment",
+      "warranty": "2 years",
+      "description_en": "Inline weighing system with thermal‑transfer label printing to mark weight and variable data directly on the package.",
+      "description_ka": "ხაზზე ინტეგრირებული სასწორი თერმოტრანსფერული ბეჭდვით — შეფუთვაზე წონისა და ცვალებადი მონაცემების მარკირებისთვის.",
+      "images": [
+        "/assets/placeholder.jpg"
+      ],
+      "tags": [
+        "checkweigher",
+        "thermal-transfer"
+      ],
+      "source_url": "https://print-apply.ru/solution/chekveyer-s-pechatyu-etiketok/",
+      "cta_link": "mailto:info@egais-georgia.com?subject=Checkweigher%20with%20Printing"
+    }
+  ]
+}

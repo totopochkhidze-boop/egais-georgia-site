@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Egais Georgia — Industrial Marking</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    header.sticky{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;gap:16px;padding:12px 0}
+    .nav a{color:var(--text);text-decoration:none;font-weight:700}
+    .spacer{flex:1 1 auto}
+    .menu{position:relative}
+    .submenu{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:12px;display:none;min-width:240px;box-shadow:0 12px 24px rgba(0,0,0,.08);z-index:20}
+    .submenu a{display:block;padding:10px 12px;white-space:nowrap}
+    .menu:hover .submenu{display:block}
+    .hero{position:relative;height:72vh;min-height:520px;overflow:hidden}
+    .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 800ms ease;transform:scale(1.04)}
+    .slide.active{opacity:1;animation:ken 9s ease-in-out forwards}
+    @keyframes ken{0%{transform:scale(1.04)}100%{transform:scale(1.1)}}
+    .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55))}
+    .hero-inner{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1200px,94%);color:#fff}
+    .hero h1{font-size:48px;line-height:1.1;margin:0 0 12px;font-weight:900;letter-spacing:.2px}
+    .hero p{font-size:18px;max-width:820px;margin:0 0 20px;opacity:.95}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn.light{background:#fff;color:var(--brand-blue)}
+    .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:18px;display:flex;gap:8px}
+    .dot{width:9px;height:9px;border-radius:999px;background:rgba(255,255,255,.5)}
+    .dot.active{background:#fff}
+  </style>
+</head>
+<body>
+  <header class="container nav sticky">
+    <img src="/assets/logo.png" alt="Egais Georgia" style="height:42px;"/>
+    <a href="/about.html" id="navAbout">About Us</a>
+    <a href="/egais-license.html" id="navEgais">EGAIS License</a>
+    <div class="menu">
+      <a href="#" id="navConsumables">Consumables</a>
+      <div class="submenu">
+        <a href="/consumables-labels.html" id="navLabels">Thermal Transfer Labels</a>
+        <a href="/consumables-ribbons.html" id="navRibbons">Wax Ribbons</a>
+      </div>
+    </div>
+    <a href="/marking-equipment.html" id="navMarking">Marking Equipment</a>
+    <div class="spacer"></div>
+    <a href="/app/login.html" id="navLogin">Log in</a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ka">KA</button>
+    </div>
+  </header>
+  <div class="brandbar"></div>
+
+  <section class="hero">
+    <div class="slide" data-remote="https://source.unsplash.com/hSO87BU4BIc/1920x1080" data-local="/assets/hero1.jpg"></div>
+    <div class="slide" data-remote="https://source.unsplash.com/yNtfOG-hSso/1920x1080" data-local="/assets/hero2.jpg"></div>
+    <div class="slide" data-remote="https://source.unsplash.com/h2rWePLKxvs/1920x1080" data-local="/assets/hero3.jpg"></div>
+    <div class="overlay"></div>
+    <div class="hero-inner">
+      <h1 id="heroTitle">Industrial Marking & Labeling Solutions</h1>
+      <p id="heroSub">Printer‑applicators, automatic labeling, and integrated verification for compliant, high‑speed operations.</p>
+      <div class="cta-row">
+        <a class="btn light" id="ctaProducts" href="/marking-equipment.html">Explore Products</a>
+        <a class="btn" id="ctaContact" href="mailto:info@egais-georgia.com">Contact Us</a>
+      </div>
+    </div>
+    <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </section>
+
+  <footer class="container">
+    <p id="footerText">&copy; Georgian Technology Company LTD — Egais Georgia</p>
+  </footer>
+
+<script>
+const REMOTE = ['https://source.unsplash.com/hSO87BU4BIc/1920x1080', 'https://source.unsplash.com/yNtfOG-hSso/1920x1080', 'https://source.unsplash.com/h2rWePLKxvs/1920x1080'];
+const LOCAL = ['/assets/hero1.jpg', '/assets/hero2.jpg', '/assets/hero3.jpg'];
+const STRINGS = {
+  en: {
+    navAbout:"About Us", navEgais:"EGAIS License", navConsumables:"Consumables",
+    navLabels:"Thermal Transfer Labels", navRibbons:"Wax Ribbons",
+    navMarking:"Marking Equipment", navLogin:"Log in",
+    heroTitle:"Industrial Marking & Labeling Solutions",
+    heroSub:"Printer‑applicators, automatic labeling, and integrated verification for compliant, high‑speed operations.",
+    ctaProducts:"Explore Products", ctaContact:"Contact Us",
+    footerText:"© Georgian Technology Company LTD — Egais Georgia"
+  },
+  ka: {
+    navAbout:"ჩვენ შესახებ", navEgais:"ეგაისის ლიცენზია", navConsumables:"სახარჯი მასალა",
+    navLabels:"თერმოტრანსფერული ეტიკეტები", navRibbons:"ვაქსის რიბონი",
+    navMarking:"მარკირების აღჭურვილობა", navLogin:"შესვლა",
+    heroTitle:"ინდუსტრიული მარკირებისა და ეტიკეტირების გადაწყვეტილებები",
+    heroSub:"პრინტერ‑აპლიკატორები, ავტომატური ეტიკეტირება და ვერიფიკაცია შესაბამისობისა და მაღალი სიჩქარისთვის.",
+    ctaProducts:"პროდუქციის ნახვა", ctaContact:"დაგვიკავშირდით",
+    footerText:"© Georgian Technology Company LTD — Egais Georgia"
+  }
+};
+function getLang(){
+  const url=new URL(window.location.href); const q=url.searchParams.get('lang');
+  if(q&& (q==='en'||q==='ka')){ localStorage.setItem('lang',q); return q; }
+  return localStorage.getItem('lang') || ((navigator.language||'en').toLowerCase().startsWith('ka')?'ka':'en');
+}
+function applyLang(){
+  const L=getLang(), s=STRINGS[L];
+  ['navAbout','navEgais','navConsumables','navLabels','navRibbons','navMarking','navLogin','footerText'].forEach(id=>{
+    const el=document.getElementById(id); if(el&&s[id]) el.textContent=s[id];
+  });
+  document.getElementById('heroTitle').textContent=s.heroTitle;
+  document.getElementById('heroSub').textContent=s.heroSub;
+  document.getElementById('ctaProducts').textContent=s.ctaProducts;
+  document.getElementById('ctaContact').textContent=s.ctaContact;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===L));
+  document.querySelectorAll('a[href$=".html"]').forEach(a=>{ const u=new URL(a.getAttribute('href'), location.origin); u.searchParams.set('lang', L); a.href=u.pathname+u.search; });
+}
+function attachLang(){
+  document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click', ()=>{
+    const L=b.dataset.lang; localStorage.setItem('lang',L);
+    const u=new URL(location.href); u.searchParams.set('lang',L); location.href=u.toString();
+  }));
+}
+function preloadSlides(){
+  const slides=[...document.querySelectorAll('.slide')];
+  const dots=[...document.querySelectorAll('.dot')];
+  slides.forEach((el,idx)=>{ el.style.backgroundImage = 'url(' + el.dataset.local + ')'; }); // local first
+  slides[0].classList.add('active'); dots[0].classList.add('active');
+  // Try remote load; fallback remains if blocked
+  slides.forEach((el)=>{
+    const remote=el.dataset.remote;
+    const img=new Image();
+    let done=false;
+    const finish=(ok)=>{ if(ok) el.style.backgroundImage='url('+remote+')'; done=true; };
+    img.onload=()=>finish(true);
+    img.onerror=()=>finish(false);
+    img.src=remote;
+    setTimeout(()=>{ if(!done) finish(false); }, 3500);
+  });
+  // slider rotate
+  let i=0;
+  setInterval(()=>{ slides[i].classList.remove('active'); dots[i].classList.remove('active'); i=(i+1)%slides.length; slides[i].classList.add('active'); dots[i].classList.add('active'); }, 5500);
+}
+applyLang(); attachLang(); preloadSlides();
+</script>
+</body>
+</html>

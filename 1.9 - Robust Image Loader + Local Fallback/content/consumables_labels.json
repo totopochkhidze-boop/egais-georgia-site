@@ -1,0 +1,63 @@
+{
+  "sizes": [
+    {
+      "dimension": "100×50",
+      "features": [
+        "strong adhesive",
+        "paper"
+      ],
+      "note_en": "Stock size",
+      "note_ka": "საწყობში არსებული ზომა"
+    },
+    {
+      "dimension": "100×70",
+      "features": [
+        "strong adhesive",
+        "paper"
+      ],
+      "note_en": "Stock size",
+      "note_ka": "საწყობში არსებული ზომა"
+    },
+    {
+      "dimension": "100×75",
+      "features": [
+        "universal",
+        "paper"
+      ],
+      "note_en": "Universal",
+      "note_ka": "უნივერსალური"
+    },
+    {
+      "dimension": "100×90",
+      "features": [
+        "paper"
+      ],
+      "note_en": "",
+      "note_ka": ""
+    },
+    {
+      "dimension": "100×120",
+      "features": [
+        "paper"
+      ],
+      "note_en": "",
+      "note_ka": ""
+    },
+    {
+      "dimension": "100×124",
+      "features": [
+        "paper"
+      ],
+      "note_en": "",
+      "note_ka": ""
+    },
+    {
+      "dimension": "100×150",
+      "features": [
+        "paper"
+      ],
+      "note_en": "",
+      "note_ka": ""
+    }
+  ]
+}

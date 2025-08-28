@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "category": "Printers",
+      "title_en": "Industrial Label Printer",
+      "title_ka": "ინდუსტრიული ეტიკეტის პრინტერი",
+      "description_en": "High‑resolution thermal transfer printing for logistics and packaging.",
+      "description_ka": "მაღალი გარჩევადობის თერმოტრანსფერული ბეჭდვა ლოგისტიკისა და შეფუთვისთვის.",
+      "images": [
+        "/assets/placeholder.jpg"
+      ],
+      "link": "#"
+    },
+    {
+      "category": "Scanners",
+      "title_en": "Handheld Barcode Scanner",
+      "title_ka": "ხელის შტრიხკოდის სკანერი",
+      "description_en": "Rugged scanner for warehouses and production.",
+      "description_ka": "მტკიცე სკანერი საწყობებისა და წარმოებისთვის.",
+      "images": [
+        "/assets/placeholder.jpg"
+      ],
+      "link": "#"
+    }
+  ]
+}
